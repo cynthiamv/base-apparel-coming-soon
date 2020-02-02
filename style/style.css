@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600&display=swap");
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+  display: flex; }
+  body main {
+    background-image: url("../images/bg-pattern-desktop.svg");
+    height: 800px;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 50px 170px; }
+    body main .logo {
+      height: 45px;
+      width: 200px; }
+      body main .logo img {
+        height: auto;
+        width: 100%; }
+    body main .mobile-bg {
+      display: none; }
+    body main .info h1 {
+      font-size: 50px;
+      line-height: 80px;
+      letter-spacing: 18px; }
+      body main .info h1 .light {
+        color: #ce9797;
+        font-weight: 300; }
+    body main .info .text {
+      color: #ce9797;
+      line-height: 30px; }
+    body main form {
+      display: flex; }
+      body main form #email {
+        width: 400px;
+        padding: 17px 25px;
+        border-radius: 25px;
+        border: 1px solid rgba(206, 151, 151, 0.397); }
+      body main form #email::placeholder {
+        color: #ce9797; }
+      body main form #btn-submit {
+        width: 100px;
+        margin-left: -60px;
+        border-radius: 25px;
+        border: none;
+        background-image: url(../images/icon-arrow.svg), linear-gradient(135deg, #f8bfbf, #ee8c8c);
+        background-repeat: no-repeat;
+        background-position: center; }
+      body main form #btn-submit:hover {
+        cursor: pointer;
+        background-image: url(../images/icon-arrow.svg);
+        background-color: #f8bfbf; }
+      body main form .error {
+        background-image: url(../images/icon-error.svg);
+        background-repeat: no-repeat;
+        background-position-y: center;
+        border: 1px solid #f96262 !important; }
+    body main .error-message {
+      margin: 7px 0;
+      color: #f96262; }
+    body main .success-message {
+      color: #1affa3; }
+  body aside {
+    display: flex;
+    height: 800px;
+    width: 45%; }
+    body aside img {
+      height: auto;
+      width: 100%; }
+
+@media (max-width: 1023px) {
+  body main {
+    padding: 50px 50px; } }
+
+@media (max-width: 700px) and (min-width: 550px) {
+  body {
+    flex-direction: column; }
+    body main {
+      width: 100%;
+      background: none;
+      padding: 0; }
+      body main nav {
+        padding: 20px 0;
+        height: 100px;
+        position: absolute;
+        top: 15px;
+        z-index: 3; }
+      body main .mobile-bg {
+        display: block;
+        width: 100%;
+        position: relative;
+        top: 180px;
+        z-index: -1; }
+        body main .mobile-bg img {
+          height: auto;
+          width: 100%; }
+      body main .info {
+        background-color: #FFF;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 170px; }
+        body main .info h1,
+        body main .info p {
+          padding: 5px 60px; }
+    body aside {
+      display: none; } }
+
+@media (max-width: 549px) and (min-width: 375px) {
+  body {
+    flex-direction: column; }
+    body main {
+      width: 100%;
+      background: none;
+      padding: 0; }
+      body main nav {
+        padding: 20px 0;
+        height: 100px;
+        position: absolute;
+        top: 15px;
+        z-index: 3; }
+      body main .mobile-bg {
+        display: block;
+        width: 100%;
+        position: relative;
+        top: 170px;
+        z-index: -1; }
+        body main .mobile-bg img {
+          height: auto;
+          width: 100%; }
+      body main .info {
+        background-color: #FFF;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        top: 150px;
+        padding-bottom: 50px; }
+        body main .info h1,
+        body main .info p {
+          padding: 5px 60px; }
+        body main .info form {
+          width: 90%; }
+    body aside {
+      display: none; } }

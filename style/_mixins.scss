@@ -1,0 +1,17 @@
+@mixin flex($direction: null, $justify: null, $align: null) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin size($height, $width) {
+    height: $height;
+    width: $width;
+}
+
+@mixin position($type, $top, $z-index: null){
+    position: $type;
+    top: $top;
+    z-index: $z-index;
+}

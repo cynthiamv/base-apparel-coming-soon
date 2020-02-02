@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600&display=swap');
+@import "variables";
+@import "mixins";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    display: flex;
+
+
+    main {
+        background-image: url('../images/bg-pattern-desktop.svg');
+        @include size(800px, 55%);
+        @include flex(column, space-around);
+        padding: 50px 170px;
+
+        .logo {
+            @include size(45px, 200px);
+
+            img {
+                @include size(auto, 100%);
+            }
+        }
+
+        .mobile-bg {
+            display: none;
+        }
+
+        .info {
+            h1 {
+                font-size: 50px;
+                line-height: 80px;
+                letter-spacing: 18px;
+
+                .light {
+                    color: $desaturated_red;
+                    font-weight: 300;
+                }
+            }
+
+            .text {
+                color: $desaturated_red;
+                line-height: 30px;
+            }
+        }
+
+        form {
+            display: flex;
+
+            #email {
+                width: 400px;
+                padding: 17px 25px;
+                border-radius: 25px;
+                border: 1px solid hsla(0, 36%, 70%, 0.397);
+            }
+
+            #email::placeholder {
+                color: $desaturated_red;
+            }
+
+            #btn-submit {
+                width: 100px;
+                margin-left: -60px;
+                border-radius: 25px;
+                border: none;
+                background-image: url(../images/icon-arrow.svg),
+                    linear-gradient(135deg, #f8bfbf, #ee8c8c);
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            #btn-submit:hover {
+                cursor: pointer;
+                background-image: url(../images/icon-arrow.svg);
+                background-color: #f8bfbf;
+            }
+
+            .error {
+                background-image: url(../images/icon-error.svg);
+                background-repeat: no-repeat;
+                background-position-y: center;
+                border: 1px solid $soft_red !important;
+            }
+        }
+
+        .error-message {
+            margin: 7px 0;
+            color: $soft_red;
+        }
+
+        .success-message {
+            color: #1affa3;
+        }
+
+    }
+
+    aside {
+        display: flex;
+        @include size(800px, 45%);
+
+        img {
+            @include size(auto, 100%);
+        }
+    }
+
+}
+
+@media (max-width: 1023px) {
+    body {
+        main {
+            padding: 50px 50px;
+
+        }
+    }
+}
+
+@media (max-width: 700px) and (min-width: 550px) {
+    body {
+        flex-direction: column;
+
+        main {
+            width: 100%;
+            background: none;
+            padding: 0;
+
+            nav {
+                padding: 20px 0;
+                height: 100px;
+                @include position(absolute, 15px, 3);
+            }
+
+            .mobile-bg {
+                display: block;
+                width: 100%;
+                @include position(relative, 180px, -1);
+
+                img {
+                    @include size(auto, 100%);
+                }
+            }
+
+            .info {
+                background-color: #FFF;
+                text-align: center;
+                @include flex(column, center, center);
+                @include position(relative, 170px);
+
+                h1,
+                p {
+                    padding: 5px 60px;
+                }
+
+
+            }
+        }
+
+        aside {
+            display: none;
+        }
+
+    }
+}
+
+@media (max-width: 549px) and (min-width: 375px) {
+    body {
+        flex-direction: column;
+
+        main {
+            width: 100%;
+            background: none;
+            padding: 0;
+
+            nav {
+                padding: 20px 0;
+                height: 100px;
+                @include position(absolute, 15px, 3);
+            }
+
+            .mobile-bg {
+                display: block;
+                width: 100%;
+                @include position(relative, 170px, -1);
+
+                img {
+                    @include size(auto, 100%);
+                }
+            }
+
+            .info {
+                background-color: #FFF;
+                text-align: center;
+                @include flex(column, null, center);
+                @include position(relative, 150px);
+                padding-bottom: 50px;
+
+                h1,
+                p {
+                    padding: 5px 60px;
+                }
+
+                form {
+                    width: 90%;
+                }
+            }
+        }
+
+        aside {
+            display: none;
+        }
+    }
+}
